@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int maxDifference(string s) {
+        unordered_map<char,int>m1;
+        for(auto it:s){
+            m1[it]++;
+        }
+        int a1=INT_MIN;
+        int a2=INT_MAX;
+        for(auto it:m1){
+            if(it.second%2){
+                a1=max(a1,it.second);
+            }
+            else{
+                a2=min(a2,it.second);
+            }
+         
+
+        }
+        return a1-a2;
+
+        
+    }
+};
